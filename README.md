@@ -1,6 +1,6 @@
 Materiály pro aktivitu na hodinu nábožentví, kde řešíme otázku: **Je dovoleno použít násilí k vlastní obraně?**. Aktivita se skládá z těchto kroků:
 
-1. Děcka dostanou papír, kde musejí vylušit klíče a dostat se na webovou stránku hackera.
+1. Děcka dostanou papír [`intro.pdf`](./intro.pdf), kde musejí vylušit klíče a dostat se na webovou stránku hackera.
 2. Vloží správné klíče do webu a ten jim dá QR kódy, které je odkážou na 3 audiostorky.
 3. Zkusí se vžít do situace a rozhdonout se, jak by dále pokračovat.
 
