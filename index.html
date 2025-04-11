@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deník hackera — Temné příběhy</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0d0d0d;
+        color: #00ff99;
+        font-family: "Courier New", Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(to bottom right, #000000, #1a1a1a);
+      }
+
+      header {
+        padding: 2rem 0rem;
+        text-align: center;
+        border-bottom: 1px solid #00ff99;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-shadow: 0 0 10px #00ff99;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .entry {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        width: 90%;
+        max-width: 800px;
+        background: #111;
+        border: 1px dashed #00ff99;
+        box-shadow: 0 0 10px #005533;
+        border-radius: 0.5rem;
+      }
+
+      .entry h2 {
+        color: #00cc88;
+        font-size: 1.4rem;
+      }
+
+      .puzzle-input {
+        margin-top: 1rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-weight: bold;
+      }
+
+      input {
+        background: #000;
+        color: #00ff99;
+        border: 1px solid #00ff99;
+        padding: 0.5rem;
+        font-family: "Courier New", monospace;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .qr-hidden {
+        display: none;
+        margin-top: 1rem;
+      }
+
+      .qr-visible {
+        display: block;
+      }
+
+      img.qr {
+        width: 100%;
+        max-width: 200px;
+        border: 2px solid #00ff99;
+        box-shadow: 0 0 20px #00ff99;
+      }
+
+      footer {
+        margin-top: auto;
+        padding: 1rem;
+        font-size: 0.8rem;
+        color: #006644;
+        text-align: center;
+      }
+
+      @media (max-width: 500px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .entry {
+          padding: 1rem;
+          margin: 1rem;
+        }
+
+        .entry h2 {
+          font-size: 1.2rem;
+        }
+
+        input {
+          padding: 0.4rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>// DENÍK HACKERA: Temné příběhy</h1>
+      <p>
+        „Vše, co se skrývá ve stínech, jednou vyjde na světlo. Pokud víš, kam se
+        dívat.“
+      </p>
+    </header>
+
+    <div class="entry">
+      <h2>Log #01 – Střet ve stínu</h2>
+      <p>
+        „Viděl jsem, jak se k nim blíží. Maminka. Sestřička. A on... zbraň v
+        ruce, oči bez duše. Co bych měl udělat? Co kdybych jen...“
+      </p>
+      <div class="puzzle-input">
+        <label for="puzzle1">Zadej klíč (hádej, co chlapec viděl):</label>
+        <input
+          type="text"
+          id="puzzle1"
+          placeholder="..."
+          oninput="checkAnswer(this, 'voják123', 'qr1')"
+        />
+        <div class="qr-hidden" id="qr1">
+          <img class="qr" src="qr1.png" alt="QR kód 1" />
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h2>Log #02 – Plamen mezi lavicemi</h2>
+      <p>
+        „Učebna se změnila v arénu. Kahan v ruce, on ji bil. A mně běželo hlavou
+        – přepálit tu linku? Nebo to přetrpět…?“
+      </p>
+      <div class="puzzle-input">
+        <label for="puzzle2">Zadej klíč (hádej, co bylo ve skříni):</label>
+        <input
+          type="text"
+          id="puzzle2"
+          placeholder="..."
+          oninput="checkAnswer(this, 'chemie9A', 'qr2')"
+        />
+        <div class="qr-hidden" id="qr2">
+          <img class="qr" src="qr2.png" alt="QR kód 2" />
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h2>Log #03 – Narušení systému</h2>
+      <p>
+        „Někdo byl v domě. Ne sen. Kroky. Dveře. A já – zbraň v ruce, ticho
+        všude. Zbývalo jen rozhodnutí…“
+      </p>
+      <div class="puzzle-input">
+        <label for="puzzle3">Zadej klíč (hádej, kdo to byl):</label>
+        <input
+          type="text"
+          id="puzzle3"
+          placeholder="..."
+          oninput="checkAnswer(this, 'bratr00', 'qr3')"
+        />
+        <div class="qr-hidden" id="qr3">
+          <img class="qr" src="qr3.png" alt="QR kód 3" />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 | Anonymní Sběratel Stínů</p>
+    </footer>
+
+    <script>
+      function checkAnswer(input, correct, qrId) {
+        if (input.value.trim().toLowerCase() === correct.toLowerCase()) {
+          document.getElementById(qrId).classList.add("qr-visible");
+          document.getElementById(qrId).classList.remove("qr-hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
